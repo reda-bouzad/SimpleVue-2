@@ -1,0 +1,37 @@
+:root {
+  --main-bg-color: #f6f4eb;
+  --secondary-color: #91c8e4;
+  --accent-color: #749bc2;
+  --primary-color: #4682a9;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+.container {
+  border: 3px solid var(--primary-color);
+  padding: 20px;
+  height: 40vh;
+}
+
+.container h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+.btn {
+  cursor: pointer;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
