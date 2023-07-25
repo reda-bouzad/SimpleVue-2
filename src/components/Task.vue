@@ -1,7 +1,12 @@
 <template>
   <div class="task">
-    <h3>{{ task.text }}</h3>
-    <p>{{task.day}}</p>
+    <div v-bind:class="[task.reminder ? 'reminder': '']" class="box">
+      <div  class="bag"> 
+        <h3>{{ task.text }}</h3>
+        <i v-on:click="onDelete(task.id)" class="myIcone fas fa-times"></i>
+      </div>
+      <p>{{task.day}}</p>
+    </div>
   </div>
 </template>
 
@@ -11,5 +16,33 @@ export default {
   props: {
     task: Object,
   },
+  methods: {
+    onDelete(id) {
+      this.$emit('delete-task', id)
+    }
+  }
 };
 </script>
+
+<style scoped>
+  .box{
+    border: 2px solid grey;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .bag{
+    display: flex;
+  }
+  .myIcone{
+    font-size: larger;
+    align-self: center;
+    margin-left: auto;
+    padding-left: 15px ;
+    color: red;
+  }
+
+  .myIcone:hover{
+    cursor: pointer;
+  }
+</style>
