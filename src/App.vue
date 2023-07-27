@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker" />
-    <Tasks @delete-task="deleteTask" v-bind:tasks="tasks" />
+    <Tasks @toggle-task="toggleTask" @delete-task="deleteTask" v-bind:tasks="tasks" />
   </div>
 </template>
 
@@ -25,6 +25,9 @@ export default {
       if(confirm('Are you sure')) {
         this.tasks = this.tasks.filter((task) => task.id !== id)
       }
+    },
+    toggleTask(){
+      console.log(task.id)
     }
   },
   created() {

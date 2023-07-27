@@ -1,6 +1,6 @@
 <template>
   <div class="task">
-    <div v-bind:class="[task.reminder ? 'reminder': '']" class="box">
+    <div v-on:dblclick="onDoubleClick(task.id)" v-bind:class="[task.reminder ? 'reminder': '']" class="box">
       <div  class="bag"> 
         <h3>{{ task.text }}</h3>
         <i v-on:click="onDelete(task.id)" class="myIcone fas fa-times"></i>
@@ -19,6 +19,9 @@ export default {
   methods: {
     onDelete(id) {
       this.$emit('delete-task', id)
+    },
+    onDoubleClick(){
+      this.$emit('toggle-task', id)
     }
   }
 };
