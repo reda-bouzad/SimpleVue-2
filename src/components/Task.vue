@@ -20,7 +20,7 @@ export default {
     onDelete(id) {
       this.$emit('delete-task', id)
     },
-    onDoubleClick(){
+    onDoubleClick(id){
       this.$emit('toggle-task', id)
     }
   }
@@ -28,6 +28,9 @@ export default {
 </script>
 
 <style scoped>
+  .task:hover{
+    cursor: pointer;
+  }
   .box{
     border: 2px solid grey;
     margin-bottom: 10px;
